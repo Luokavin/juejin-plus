@@ -1,0 +1,14 @@
+{
+  "name": "掘金增强",
+  "version": "0.1",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://juejin.cn/post/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "/images/icon.png"
+  }
+}
