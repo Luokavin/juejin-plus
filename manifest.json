@@ -12,6 +12,10 @@
     {
       "matches": ["*://link.juejin.cn/*"],
       "js": ["/content/auto-skip.js"]
+    },
+    {
+      "matches": ["*://juejin.cn/post/*"],
+      "js": ["/content/clear-copyright.js"]
     }
   ],
   "action": {
