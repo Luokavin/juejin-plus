@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang='zh-CN'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Popup Page</title>
+    <link rel='stylesheet' href='../assets/normalize.css'>
+    <script src='./popup.js'></script>
+    <style>
+      .app {
+        width: 12rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .title {
+        color: #3384ff;
+        font-size: 2rem;
+        text-align: center;
+      }
+      
+      .column {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='app'>
+      <span class='title'>掘金 PLUS</span>
+      
+      <div class='column'>
+        <span>自动跳转</span>
+        <input id='auto-skip' type='checkbox'>
+      </div>
+      
+      <div class='column'>
+        <span style='text-decoration-line: line-through'>清除复制版权提示(开发中)</span>
+        <input id='clear-copyright' type='checkbox'>
+      </div>
+    </div>
+  </body>
+</html>

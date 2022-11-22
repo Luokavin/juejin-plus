@@ -1,14 +1,25 @@
 {
-  "name": "掘金增强",
+  "name": "掘金 PLUS",
   "version": "0.1",
   "manifest_version": 3,
+  "permissions": ["storage"],
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://juejin.cn/post/*"],
-      "js": ["content-script.js"]
+      "matches": ["*://link.juejin.cn/*"],
+      "js": ["/content/auto-skip.js"]
     }
   ],
   "action": {
-    "default_icon": "/images/icon.png"
+    "default_icon": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    },
+    "default_popup": "/popup/popup.html"
   }
 }
