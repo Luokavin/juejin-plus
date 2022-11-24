@@ -11,7 +11,8 @@ window.onload = () => {
     element.addEventListener('click', handleClick);
     
     chrome.storage.sync.get(element.id, (result) => {
-      result[element.id] || chrome.storage.sync.set({ [element.id]: false });
+      console.log(element.id, result[element.id]);
+      result[element.id] === undefined && chrome.storage.sync.set({ [element.id]: true });
       element.checked = result[element.id];
     });
   });
