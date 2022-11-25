@@ -1,12 +1,7 @@
 async function skipJumpPrompt() {
-  const state = new Promise((resolve, reject) => {
-    chrome.storage.sync.get('auto-skip', resolve, reject);
-  }).then(result => result);
+  const value = await getObjectFromLocalStorage('auto-skip');
   
-  alert(state);
-  console.log(state);
-  
-  if(!state['auto-skip']) {
+  if(!value) {
     return;
   }
   
@@ -37,4 +32,6 @@ async function skipJumpPrompt() {
   window.location.href = url.searchParams.get('target');
 }
 
-skipJumpPrompt();
+(async () => {
+  await skipJumpPrompt();
+})();

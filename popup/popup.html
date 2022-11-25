@@ -5,8 +5,9 @@
     <title>Popup Page</title>
     <link rel='stylesheet' href='../assets/normalize.css'>
     <script src='./popup.js'></script>
+    <script src='../assets/script/chrome-local-storage-api.js'></script>
     <style>
-      .noselect {
+      .no-select {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -14,7 +15,7 @@
         -ms-user-select: none;
         user-select: none;
       }
-
+      
       .title {
         color: #409eff;
         font-size: 2rem;
@@ -29,14 +30,6 @@
         flex-direction: column;
       }
       
-      .tips {
-        margin-top: 1rem;
-        color: #f56c6c;
-        font-weight: bold;
-        text-align: justify;
-        text-align-last: justify;
-      }
-      
       .column {
         margin-top: 1rem;
         display: flex;
@@ -46,17 +39,15 @@
   </head>
   <body>
     <div class='app'>
-      <span class='title noselect'>掘金 PLUS</span>
+      <span class='title no-select'>掘金 PLUS</span>
       
-      <span class='tips noselect'>开关功能后需重新刷新网页</span>
-      
-      <div class='column noselect'>
+      <div class='column no-select'>
         <span>自动跳转</span>
         <input id='auto-skip' type='checkbox'>
       </div>
       
-      <div class='column noselect'>
-        <span>清除复制版权提示</span>
+      <div class='column no-select'>
+        <span>清除复制版权提示(需授权)</span>
         <input id='clear-copyright' type='checkbox'>
       </div>
     </div>

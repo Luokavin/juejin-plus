@@ -1,9 +1,8 @@
 async function handleCopy() {
-  console.log('[juejin-plus] 正在监听剪贴板');
   
-  const storage = chrome.storage.sync.get('clear-copyright');
+  const value = await getObjectFromLocalStorage('clear-copyright');
   
-  if(!storage['clear-copyright']) {
+  if(!value) {
     return;
   }
   
@@ -22,4 +21,8 @@ async function handleCopy() {
   console.log(await navigator.clipboard.readText());
 }
 
-document.body.oncopy = handleCopy;
+(() => {
+  document.body.oncopy = handleCopy;
+  
+  console.log('[juejin-plus] 正在监听剪贴板...');
+})();

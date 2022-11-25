@@ -1,6 +1,6 @@
 {
   "name": "掘金 PLUS",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version": 3,
   "permissions": ["storage"],
   "icons": {
@@ -11,11 +11,11 @@
   "content_scripts": [
     {
       "matches": ["*://link.juejin.cn/*"],
-      "js": ["/content/auto-skip.js"]
+      "js": ["/assets/script/chrome-local-storage-api.js", "/content/auto-skip.js"]
     },
     {
       "matches": ["*://juejin.cn/post/*"],
-      "js": ["/content/clear-copyright.js"]
+      "js": ["/assets/script/chrome-local-storage-api.js", "/content/clear-copyright.js"]
     }
   ],
   "action": {
