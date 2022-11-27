@@ -8,16 +8,6 @@
     "48": "images/icon.png",
     "128": "images/icon.png"
   },
-  "content_scripts": [
-    {
-      "matches": ["*://link.juejin.cn/*"],
-      "js": ["/assets/script/chrome-local-storage-api.js", "/content/auto-skip.js"]
-    },
-    {
-      "matches": ["*://juejin.cn/post/*"],
-      "js": ["/assets/script/chrome-local-storage-api.js", "/content/clear-copyright.js"]
-    }
-  ],
   "action": {
     "default_icon": {
       "16": "images/icon.png",
@@ -25,5 +15,19 @@
       "128": "images/icon.png"
     },
     "default_popup": "/popup/popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://link.juejin.cn/*"],
+      "js": ["/assets/script/chrome-local-storage-api.js", "/content/auto-skip.js"]
+    },
+    {
+      "matches": ["*://juejin.cn/post/*"],
+      "js": ["/assets/script/chrome-local-storage-api.js", "/content/login-free-copy.js"]
+    },
+    {
+      "matches": ["*://juejin.cn/post/*"],
+      "js": ["/assets/script/chrome-local-storage-api.js", "/content/clear-copyright.js"]
+    }
+  ]
 }

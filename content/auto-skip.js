@@ -1,7 +1,7 @@
 async function skipJumpPrompt() {
   const value = await getObjectFromLocalStorage('auto-skip');
   
-  if(!value) {
+  if(value === false) {
     return;
   }
   

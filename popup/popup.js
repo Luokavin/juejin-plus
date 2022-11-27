@@ -11,7 +11,12 @@ window.onload = () => {
     element.addEventListener('click', handleClick);
     
     const value = await getObjectFromLocalStorage(element.id);
-    value === undefined && await saveObjectInLocalStorage({ [element.id]: true });
+    
+    if(value === undefined) {
+      await saveObjectInLocalStorage({ [element.id]: true });
+      element.checked = true;
+      return;
+    }
     
     element.checked = value;
   });

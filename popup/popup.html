@@ -10,7 +10,6 @@
       .no-select {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
-        -khtml-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
@@ -24,7 +23,7 @@
       }
       
       .app {
-        width: 12rem;
+        width: 15rem;
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -47,7 +46,12 @@
       </div>
       
       <div class='column no-select'>
-        <span>清除复制版权提示(需授权)</span>
+        <span>免登录复制</span>
+        <input id='login-free-copy' type='checkbox'>
+      </div>
+      
+      <div class='column no-select'>
+        <span>清除框选复制版权提示(需授权)</span>
         <input id='clear-copyright' type='checkbox'>
       </div>
     </div>
