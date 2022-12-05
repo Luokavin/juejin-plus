@@ -1,12 +1,4 @@
 const handleClick = async (event) => {
-  // 获取本地存储中的数据
-  const value = await getObjectFromLocalStorage('login-free-copy');
-  
-  // 如果本地存储中没有数据,或者数据为 false (未开启功能)，则直接返回
-  if(value === false) {
-    return;
-  }
-  
   let code = event.target.parentElement.innerText;
   
   // 判断字段
@@ -27,7 +19,15 @@ const handleClick = async (event) => {
   console.log(await navigator.clipboard.readText());
 };
 
-(() => {
+const initialization = async () => {
+  // 获取本地存储中的数据
+  const value = await getObjectFromLocalStorage('login-free-copy');
+  
+  // 如果本地存储中没有数据,或者数据为 false (未开启功能)，则直接返回
+  if(value === false) {
+    return;
+  }
+  
   const codeElements = document.querySelectorAll('code');
   
   codeElements.forEach((element) => {
@@ -44,4 +44,8 @@ const handleClick = async (event) => {
     
     element.appendChild(copyButtonElement);
   });
+};
+
+(async () => {
+  await initialization();
 })();
